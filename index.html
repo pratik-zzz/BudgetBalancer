@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BudgetBalancer</title>
+</head>
+<body>
+   <div id="upper-head">
+    <h2 class="project-name">BudgetBalancer</h2>
+    <img id="logo" src="BudgetBalancer 2.jpg" alt="logo">
+    <h2 id="welcome">WELCOME!</h2>
+   </div> 
+    <div class="big-container">
+        <div id="section-1">
+            <div class="balance-container">
+            <h4 id="balance-heading">CURRENT BALANCE</h4>
+            <h1 id="balance">0.00</h1>
+        </div>    
+        <div class="expinc">
+            <div id="income-div">
+                <h4>TOTAL INCOME</h4>
+                <h4 id="income">0.00</h4>
+            </div>
+            <div id="line"></div>
+            <div id="expense-div">
+                <h4>TOTAL EXPENSE</h4>
+                <h4 id="expense">0.00</h4>
+            </div>
+        </div>
+         
+        </div>
+        <div>
+            
+        </div>
+        <div id="transaction">
+            <h3 id="td">TRANSACTION ENTRY</h3>
+            <div id="input">
+                <p id="txt1">Enter label</p>
+                <input type="text" name="enter text" id="label" placeholder="Type here">
+                <p id="txt">Enter amount</p>
+                <input type="text" name="enter amount" id="amount" placeholder="Type here">
+            </div>
+            <div id="buttons">
+                <button id="income-btn" onclick="addIncome()">INCOME</button>
+                <button id="expense-btn" onclick="addExpense()">EXPENSE</button>
+            </div>
+        </div>
+        <div id="history">
+            <h3>TRANSACTION HISTORY</h3>
+            <ul id="list-history"></ul>
+        </div>  
+    </div>  
+    <script src="script.js"></script>
+</body>
+</html>
