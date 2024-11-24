@@ -35,28 +35,34 @@ function addExpense(){
     expAmount = amountEl.value
     labelEl = document.getElementById("label")
     label = labelEl.value
-    if (expAmount === '') {
-        alert("Please enter an amount.");
-        return; 
-    } else if (!Number.isInteger(parseFloat(expAmount))) {
-        alert("Please enter an integer amount.")
-        return;
-    } else if (label === '') {
-        label = 'Unknown'
+
+    if (expAmount > balance) {
+        alert("Insufficient balance!")
     }
-    expenseEl = document.getElementById('expense')
-    expenseEl.textContent = expAmount   
-    totalExp += parseFloat(expAmount)
-    expenseEl.textContent = totalExp
-    balanceEl = document.getElementById('balance')
-    balance -= parseFloat(expAmount)
-    balanceEl.textContent = balance
+     else {   
+        if (expAmount === '') {
+            alert("Please enter an amount.");
+            return; 
+        } else if (!Number.isInteger(parseFloat(expAmount))) {
+            alert("Please enter an integer amount.")
+            return;
+        } else if (label === '') {
+            label = 'Unknown'
+        }
+        expenseEl = document.getElementById('expense')
+        expenseEl.textContent = expAmount   
+        totalExp += parseFloat(expAmount)
+        expenseEl.textContent = totalExp
+        balanceEl = document.getElementById('balance')
+        balance -= parseFloat(expAmount)
+        balanceEl.textContent = balance
 
-    addToHistory(label, expAmount, 'expense')
-    amountEl.value = '';
-    labelEl.value = '';
+        addToHistory(label, expAmount, 'expense')
+        amountEl.value = '';
+        labelEl.value = '';
 
-    alert("Expense noted.")
+        alert("Expense noted.")
+    }
 }
 
 function addToHistory(label,amount,type){
